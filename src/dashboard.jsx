@@ -50,25 +50,25 @@ class Dashboard extends React.Component {
     console.log(e.target.value);
   };
 
-  getStoryData = (storyId) => {
-    if (storyId.length > 0) {
-      storyId.forEach(
-        (storyId) =>
-          setTimeout(() => {
-            fetch(
-              `https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`
-            )
-              .then((response) => response.json())
-              .then((data) => {
-                this.setState({
-                  storyDetails: [...this.state.storyDetails, data],
-                });
-              });
-          }),
-        0
-      );
-    }
-  };
+  // getStoryData = (storyId) => {
+  //   if (storyId.length > 0) {
+  //     storyId.forEach(
+  //       (storyId) =>
+  //         setTimeout(() => {
+  //           fetch(
+  //             `https://hacker-news.firebaseio.com/v0/item/${storyId}.json?print=pretty`
+  //           )
+  //             .then((response) => response.json())
+  //             .then((data) => {
+  //               this.setState({
+  //                 storyDetails: [...this.state.storyDetails, data],
+  //               });
+  //             });
+  //         }),
+  //       0
+  //     );
+  //   }
+  // };
 
   render() {
     console.log(this.state.storyDetails);
